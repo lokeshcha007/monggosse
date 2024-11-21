@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit List</title>
+</head>
+<body>
+  <h1>Edit: <%= list.name %></h1>
+  <ul>
+    <% list.responseCodes.forEach((code, index) => { %>
+      <li>
+        <p>Code: <%= code %></p>
+        <img src="<%= list.imageLinks[index] %>" alt="Dog Image" width="200" />
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

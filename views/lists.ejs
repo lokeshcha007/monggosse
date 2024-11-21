@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Saved Lists</title>
+</head>
+<body>
+  <h1>Saved Lists</h1>
+  <ul>
+    <% lists.forEach(list => { %>
+      <li>
+        <a href="/lists/<%= list._id %>"><%= list.name %></a>
+        <form action="/lists/<%= list._id %>?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

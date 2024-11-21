@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search</title>
+</head>
+<body>
+  <h1>Search Response Codes</h1>
+  <form action="/search" method="POST">
+    <input type="text" name="filter" placeholder="Enter response code or range" required />
+    <button type="submit">Search</button>
+  </form>
+  <h2>Results</h2>
+  <ul>
+    <% results.forEach(result => { %>
+      <li>
+        <p>Code: <%= result.code %></p>
+        <img src="<%= result.image %>" alt="Dog Image" width="200" />
+      </li>
+    <% }); %>
+  </ul>
+  <form action="/save-list" method="POST">
+    <input type="text" name="name" placeholder="List Name" required />
+    <input type="hidden" name="codes" value='<%= JSON.stringify(results.map(r => r.code)) %>' />
+    <input type="hidden" name="images" value='<%= JSON.stringify(results.map(r => r.image)) %>' />
+    <button type="submit">Save List</button>
+  </form>
+</body>
+</html>
