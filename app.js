@@ -93,11 +93,3 @@ app.delete("/lists/:id", async (req, res) => {
 app.listen(3000, () => {
   console.log("Server running on http://localhost:3000");
 });
-
-echo "# monggosse" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/lokeshcha007/monggosse.git
-git push -u origin main
